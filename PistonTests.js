@@ -48,10 +48,10 @@ GameTest.register("PistonTests", "quasiconnectivity", (test) => {
   .tag(GameTest.Tags.suiteDisabled); //There are version differences. Java version has a switch, which can control one piston at the same time, while bedrock version can only control one piston. All the structures have been modified, and the pull rod and its coordinates have been changed to (0, 3, 0) ,next to "quasiconnectivity_bedrock"
 
 GameTest.register("PistonTests", "quasiconnectivity_bedrock", (test) => {
-  const topStartPos = new BlockLocation(3, 3, 0);
-  const bottomStartPos = new BlockLocation(3, 2, 0);
-  const topEndPos = new BlockLocation(2, 3, 0);
-  const bottomEndPos = new BlockLocation(2, 2, 0);
+  const topStartPos = new BlockLocation(0, 3, 0);
+  const bottomStartPos = new BlockLocation(0, 2, 0);
+  const topEndPos = new BlockLocation(0, 3, 0);
+  const bottomEndPos = new BlockLocation(0, 3, 0);
   const pullLeverPos = new BlockLocation(0, 3, 0);
 
   test.pullLever(pullLeverPos); //There are version differences. Java version has a switch, which can control one piston at the same time, while bedrock version can only control one piston. All the structures have been modified, and the pull rod and its coordinates have been changed to (0, 3, 0)
@@ -835,3 +835,4 @@ GameTest.register("PistonTests", "backside_fence", (test) => {
     })
     .thenFail("Fence didn't stay connected to pistons");
 }).tag(GameTest.Tags.suiteDefault);
+}).allow-piston-duplication: on ture
